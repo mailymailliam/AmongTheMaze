@@ -38,8 +38,8 @@ window.onload = function () {
 
     amongUsRightFrames[0].src = 'slike/among2.webp';
     amongUsRightFrames[1].src = 'slike/among2.webp';
-    amongUsLeftFrames[0].src = 'slike/amon2.webp';
-    amongUsLeftFrames[1].src = 'slike/amon2.webp';
+    amongUsLeftFrames[0].src = 'slike/among2.webp';
+    amongUsLeftFrames[1].src = 'slike/among2.webp';
 
     mazeCollisionCanvas = document.createElement('canvas');
     mazeCollisionCanvas.width = canvas.width;
@@ -287,3 +287,4 @@ function isWhitePixel(x, y) {
 
     return r > 180 && g > 180 && b > 180;
 }
+

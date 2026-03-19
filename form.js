@@ -69,7 +69,8 @@ var aiPath = [
 ];
 
 window.onload = function () {
-
+ lobbyMusic.volume = 0.4
+    lobbyMusic.play();
     canvas = document.getElementById('game');
     canvasContext = canvas.getContext('2d');
 
@@ -80,7 +81,7 @@ window.onload = function () {
 
     mazeBackground.onload = function () {
         mazeCollisionContext.drawImage(mazeBackground, 0, 0, canvas.width, canvas.height);
-
+        
         setInterval(function () {
             playerMove();
             moveAI();

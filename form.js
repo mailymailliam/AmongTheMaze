@@ -162,7 +162,7 @@ function playerMove() {
     playerSpeedX = 0;
     playerSpeedY = 0;
 
-    var speed = playerRole === "impostor" ? 3 : 2;
+    var speed = playerRole === "impostor" ? 2.2: 2.2;
 
     if (keyHeld_Up) playerSpeedY = -speed;
     if (keyHeld_Down) playerSpeedY = speed;
@@ -263,7 +263,7 @@ function moveAI() {
     var dist = Math.sqrt(dx * dx + dy * dy);
     if (dist === 0) return;
 
-    var speed = playerRole === "crewmate" ? 1 : 2.5;
+    var speed = playerRole === "crewmate" ? 2.2 : 2.1;
 
     aiX += (dx / dist) * speed;
     aiY += (dy / dist) * speed;

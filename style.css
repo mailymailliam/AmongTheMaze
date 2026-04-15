@@ -37,3 +37,57 @@ h1{
 	  font-family: font;
 	  color:red;
 }
+
+.instructions-overlay{
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.instructions-overlay.hidden{
+	display: none;
+}
+
+.instructions-card{
+	background: #111;
+	border: 2px solid #ff3b3b;
+	color: #fff;
+	max-width: 520px;
+	padding: 24px;
+	border-radius: 12px;
+	font-family: font;
+	text-align: center;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.instructions-card h2{
+	font-size: 36px;
+	color: #ff3b3b;
+	margin-bottom: 14px;
+}
+
+.instructions-card p{
+	font-size: 20px;
+	line-height: 1.4;
+	margin-bottom: 10px;
+}
+
+#close-instructions{
+	margin-top: 14px;
+	padding: 10px 18px;
+	font-family: font;
+	font-size: 20px;
+	background: #ff3b3b;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+#close-instructions:hover{
+	background: #d12a2a;
+}

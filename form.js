@@ -33,6 +33,8 @@ var aiY = 2;
 var aiTargetIndex = 0;
 var aiDelay = 0;
 var respawnDelay = 0;
+var instructionsVisible = true;
+var instructionsOverlay = null;
 var playerRole = null;
 var gameState = "menu";
 var roleRevealTimer = 0;
@@ -73,6 +75,17 @@ window.onload = function () {
     lobbyMusic.play();
     canvas = document.getElementById('game');
     canvasContext = canvas.getContext('2d');
+    instructionsOverlay = document.getElementById('instructions-overlay');
+
+    var closeInstructionsButton = document.getElementById('close-instructions');
+    if (closeInstructionsButton) {
+        closeInstructionsButton.addEventListener('click', function () {
+            instructionsVisible = false;
+            if (instructionsOverlay) {
+                instructionsOverlay.classList.add('hidden');
+            }
+        });
+    }
 
     mazeCollisionCanvas = document.createElement('canvas');
     mazeCollisionCanvas.width = canvas.width;
@@ -109,6 +122,8 @@ function chooseRole() {
     roleRevealTimer = 180;
 }
 function keyPressed(evt) {
+    if (instructionsVisible) return;
+
     if (evt.keyCode == KEY_SPACE && gameState === "menu") chooseRole();
 
     if (evt.keyCode == KEY_A) keyHeld_Left = true;
@@ -118,6 +133,8 @@ function keyPressed(evt) {
 }
 
 function keyReleased(evt) {
+    if (instructionsVisible) return;
+
     if (evt.keyCode == KEY_A) keyHeld_Left = false;
     if (evt.keyCode == KEY_D) keyHeld_Right = false;
     if (evt.keyCode == KEY_W) keyHeld_Up = false;
